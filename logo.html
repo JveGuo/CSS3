@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			#outer{
+				position:absolute;
+				left:0;
+				top:0;
+				right:0;
+				bottom:0;
+				margin:auto;
+				width:360px;
+				height:360px;
+			}
+			.bigBox{
+				position:absolute;
+				left:0;
+				top:0;
+				width:360px;
+				height:360px;
+				z-index:99;
+			}
+			.middleBox{
+				position:absolute;
+				left:0;
+				top:0;
+				width:360px;
+				height:360px;
+				z-index:88;
+			}
+			.smallBox{
+				position:absolute;
+				left:0;
+				top:0;
+				width:360px;
+				height:360px;
+				z-index:77;
+			}
+			.square{
+				border-radius:25%;
+			}
+			.circle{
+				border-radius:50%;
+			}
+			.big{
+				width:360px;
+				height:360px;
+				position:absolute;
+				left:0;
+				top:0;
+				background:rgba(30, 7, 66, 0.65);
+				text-align:center;
+				font-size:100px;
+				color:white;
+				line-height:360px;
+			}
+			.middle{
+				width:300px;
+				height:300px;
+				position:absolute;
+				left:0;
+				top:0;
+				right:0;
+				bottom:0;
+				margin:auto;
+			}
+			.middleBox .middle:nth-of-type(1){
+				transform:translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(2){
+				transform:rotate(45deg) translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(3){
+				transform:rotate(90deg) translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(4){
+				transform:rotate(135deg) translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(5){
+				transform:rotate(180deg) translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(6){
+				transform:rotate(225deg) translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(7){
+				transform:rotate(270deg) translateY(-150px);
+			}
+			.middleBox .middle:nth-of-type(8){
+				transform:rotate(315deg) translateY(-150px);
+			}
+			.small{
+				width:90px;
+				height:90px;
+				position:absolute;
+				left:0;
+				top:0;
+				right:0;
+				bottom:0;
+				margin:auto;
+			}
+			.smallBox .small:nth-of-type(1){
+				transform:translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(2){
+				transform:rotate(45deg) translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(3){
+				transform:rotate(90deg) translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(4){
+				transform:rotate(135deg) translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(5){
+				transform:rotate(180deg) translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(6){
+				transform:rotate(225deg) translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(7){
+				transform:rotate(270deg) translateY(-300px);
+			}
+			.smallBox .small:nth-of-type(8){
+				transform:rotate(315deg) translateY(-300px);
+			}
+			.one{
+				background:rgba(16, 63, 236, 0.75);
+			}
+			.two{
+				background: rgba(37, 172, 162, 0.75);
+			}
+			.three{
+				background: rgba(233, 124, 32, 0.75);
+			}
+			.four{
+				background:rgba(235, 67, 35, 0.75);
+			}
+			.five{
+				background:rgba(190, 28, 65, 0.75);
+			}
+			.six{
+				background:rgba(208, 57, 159, 0.75);
+			}
+			.seven{
+				background: rgba(150, 32, 198, 0.75);
+			}
+			.eight{
+				background:rgba(95, 33, 203, 0.75);
+			}
+			@-webkit-keyframes move{
+				from{transform:rotate(0deg);}
+				to{transform:rotate(360deg);}
+			}
+			.big:nth-of-type(1){
+				-webkit-animation:move 35s infinite linear;
+			}
+			.middleBox{
+				-webkit-animation:move 30s infinite linear;
+			}
+			.smallBox{
+				-webkit-animation:move 25s infinite linear;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<div class="bigBox">
+				<div class="square big"></div>
+				<div class="square big">H5</div>
+			</div>
+			<div class="middleBox">
+				<div class="middle circle one"></div>
+				<div class="middle circle two"></div>
+				<div class="middle circle three"></div>
+				<div class="middle circle four"></div>
+				<div class="middle circle five"></div>
+				<div class="middle circle six"></div>
+				<div class="middle circle seven"></div>
+				<div class="middle circle eight"></div>
+			</div>
+			<div class="smallBox">
+				<div class="small square one"></div>
+				<div class="small circle two"></div>
+				<div class="small square three"></div>
+				<div class="small circle four"></div>
+				<div class="small square five"></div>
+				<div class="small circle six"></div>
+				<div class="small square seven"></div>
+				<div class="small circle eight"></div>
+			</div>
+		</div>
+	</body>
+</html>

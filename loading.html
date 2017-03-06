@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			.load1{
+				width:160px;
+				height:50px;
+				margin:100px auto 0;
+			}
+			.load1 ul{
+				list-style:none;
+				width:160px;
+				height:50px;
+				overflow:hidden;
+			}
+			.load1 ul li{
+				width:10px;
+				height:50px;
+				background:purple;
+				float:left;
+				margin-right:10px;
+				-webkit-transform:scaleY(0.2);
+				-moz-transform:scaleY(0.2);
+				-o-transform:scaleY(0.2);
+				-ms-transform:scaleY(0.2);
+				transform:scaleY(0.2);
+			}
+			@-webkit-keyframes load1{
+				0%{-webkit-transform:scaleY(0.2);}
+				100%{-webkit-transform:scaleY(1);}
+			}
+			@-moz-keyframes load1{
+				0%{-moz-transform:scaleY(0.2);}
+				100%{-moz-transform:scaleY(1);}
+			}
+			@-o-keyframes load1{
+				0%{-o-transform:scaleY(0.2);}
+				100%{-o-transform:scaleY(1);}
+			}
+			@-ms-keyframes load1{
+				0%{-ms-transform:scaleY(0.2);}
+				100%{-ms-transform:scaleY(1);}
+			}
+			@keyframes load1{
+				0%{transform:scaleY(0.2);}
+				100%{transform:scaleY(1);}
+			}
+			.load2{
+				position:relative;
+				margin:100px auto 0;
+				width:50px;
+				height:50px;
+			}
+			.load2 .bigCircle{
+				position:absolute;
+				left:0;
+				top:0;
+				width:40px;
+				height:40px;
+				border:5px solid transparent;
+				border-bottom:5px solid aqua;
+				border-right:5px solid aqua;
+				border-radius:50%;
+				transform:rotate(0deg);
+			}
+			.load2 .smallCircle{
+				position:absolute;
+				left:0;
+				top:0;
+				right:0;
+				bottom:0;
+				margin:auto;
+				width:30px;
+				height:30px;
+				border:5px solid transparent;
+				border-top:5px solid brown;
+				border-left:5px solid brown;
+				border-radius:50%;
+				transform:rotate(0deg);
+			}
+			
+			@-webkit-keyframes rotate{
+				from{transform:rotate(0deg);}
+				to{transform:rotate(360deg);}
+			}
+			@keyframes rotate{
+				from{transform:rotate(0deg);}
+				to{transform:rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="load1">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="load2">
+			<div class="bigCircle"></div>
+			<div class="smallCircle"></div>
+		</div>
+		<script type="text/javascript">
+			var load1 = document.getElementsByClassName("load1")[0].getElementsByTagName("li");
+			var bigCircle = document.getElementsByClassName("bigCircle")[0];
+			var smallCircle = document.getElementsByClassName("smallCircle")[0];
+			for(var i=0;i<load1.length;i++){
+				load1[i].style.webkitAnimation = "load1 0.7s "+0.1*i+"s infinite alternate";
+			}
+			for(var i=0;i<load1.length;i++){
+				load1[i].style.animation = "load1 0.7s "+0.1*i+"s infinite alternate";
+			}
+			bigCircle.style.webkitAnimation = "rotate 0.5s";
+			
+//			if(){
+			bigCircle.addEventListener("webkitAnimationEnd",function(){
+				bigCircle.style.webkitAnimation = "";
+				smallCircle.style.webkitAnimation = "rotate 0.5s";
+			},false);
+			smallCircle.addEventListener("webkitAnimationEnd",function(){
+				smallCircle.style.webkitAnimation = "";
+				bigCircle.style.webkitAnimation = "rotate 0.5s";
+			},false)
+//			}
+
+			bigCircle.style.animation = "rotate 0.5s";
+			bigCircle.addEventListener("animationend",function(){
+				bigCircle.style.animation = "";
+				smallCircle.style.animation = "rotate 0.5s";
+			},false);
+			smallCircle.addEventListener("animationend",function(){
+				smallCircle.style.animation = "";
+				bigCircle.style.animation = "rotate 0.5s";
+			},false);
+		</script>
+	</body>
+</html>
